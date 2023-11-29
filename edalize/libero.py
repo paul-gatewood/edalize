@@ -109,8 +109,8 @@ class Libero(Edatool):
 
         escaped_name = self.name.replace(".", "_")
 
-        # Add Edalize working dir to Synthesys includes removing duplicates
-        incdirs = list(set(incdirs.__add__(["."])))
+        # Remove duplicate include directories
+        incdirs = list(set(incdirs))
 
         # Build source files that are part of libraries
         library_files = defaultdict(list)
